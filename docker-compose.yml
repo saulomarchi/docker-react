@@ -3,11 +3,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - .:/app
-
-# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app saulomarchi/docker-frontend
+      - "80:80"
