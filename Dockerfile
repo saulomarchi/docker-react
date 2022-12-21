@@ -9,6 +9,7 @@ COPY . .
 
 CMD ["npm", "run", "build"]
 
+RUN ls -l
 
 FROM nginx
 EXPOSE 80
