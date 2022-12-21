@@ -1,0 +1,15 @@
+name: New PR Docker Frontend Web
+on:
+  pull_request:
+    branches:
+      - master
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: docker build -t saulomarchi/docker-frontend-web-test -f Dockerfile.dev .
+      - run: docker run -e CI=true saulomarchi/docker-frontend-web-test npm test
+
